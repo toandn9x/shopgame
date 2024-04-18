@@ -1,0 +1,39 @@
+RewriteEngine On
+
+DirectoryIndex app/controllers/home.php
+
+RewriteRule ^login$ app/controllers/login.php [L]
+RewriteRule ^logout$ app/controllers/logout.php [L]
+RewriteRule ^register$ app/controllers/register.php [L]
+RewriteRule ^login-fb$ app/controllers/login-fb.php [L]
+
+RewriteRule ^user/profile$ app/controllers/user/profile.php [L]
+RewriteRule ^user/change-password$ app/controllers/user/change-password.php [L]
+RewriteRule ^user/transfer$ app/controllers/user/transfer.php [L]
+RewriteRule ^user/tran-log$ app/controllers/user/tran-log.php [L]
+RewriteRule ^tran/acc$ app/controllers/tran/acc.php [L]
+RewriteRule ^tran/check/(\d+)$ app/controllers/tran/check.php?id=$1 [L]
+RewriteRule ^nap-the$ app/controllers/charge.php [L]
+RewriteRule ^callback$ app/controllers/callback.php [L]
+
+RewriteRule ^admin$ app/controllers/admin/dashboard.php [L]
+RewriteRule ^admin/tran-log$ app/controllers/admin/tran-log.php [L]
+RewriteRule ^admin/users$ app/controllers/admin/users/index.php [L]
+RewriteRule ^admin/users/edit/(\d+)$ app/controllers/admin/users/edit.php?id=$1 [L]
+RewriteRule ^admin/categories$ app/controllers/admin/categories/index.php [L]
+RewriteRule ^admin/categories/(\d+)/edit$ app/controllers/admin/categories/edit.php?id=$1 [L]
+RewriteRule ^admin/game-item$ app/controllers/admin/game-item/index.php [L]
+RewriteRule ^admin/game-item/create$ app/controllers/admin/game-item/create.php [L]
+RewriteRule ^admin/report-sell-acc$ app/controllers/admin/report-sell-acc.php [L]
+RewriteRule ^admin/charges$ app/controllers/admin/charges.php [L]
+RewriteRule ^admin/settings$ app/controllers/admin/settings.php [L]
+RewriteRule ^admin/money$ app/controllers/admin/money.php [L]
+
+RewriteRule ^game/(.*)$ app/controllers/category.php?slug=$1 [L]
+RewriteRule ^acc/(\d+)$ app/controllers/acc.php?id=$1 [L]
+RewriteRule ^buyacc/(\d+)$ app/controllers/buyacc.php?id=$1 [L]
+RewriteRule ^blog$ app/controllers/blog/index.php [L]
+
+RewriteRule ^sponsors$ app/controllers/sponsors.php [L]
+
+ErrorDocument 404 /app/controllers/errors/404.php
